@@ -79,7 +79,7 @@ function Card({ courseName, questions }) {
         )}
       </div>
       <button className="btn cardBtn" onClick={prevQuestion}>
-        Nästa fråga
+        Föregående fråga
       </button>
       <button className="btn cardBtn" onClick={nextQuestion}>
         Nästa fråga
