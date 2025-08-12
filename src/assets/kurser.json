@@ -1,0 +1,14 @@
+{
+  "ISGB04": [
+    {
+      "Förklara skillnaderna mellan följande koncept och ge exempel på användningsområden: \na) Call by value vs Call by reference i C \nb) Strukturerad vs Objektorienterad programmering \nc) Statisk vs Dynamisk minnesallokering": "Call by value skickar en kopia av värdet till funktionen och ändringar påverkar inte originalvariabeln. Call by reference skickas via pekare så att funktionen kan ändra originalvärdet direkt. \n\nStrukturerad programmering bygger på procedurer och separerar data och funktioner, medan objektorienterad programmering kapslar in data och metoder i objekt och använder arv, polymorfism och inkapsling. \n\nStatisk minnesallokering bestämmer minnesstorleken vid kompilering eller funktionsstart, medan dynamisk minnesallokering bestämmer storleken under körning och kräver att programmeraren frigör minnet manuellt."
+    },
+    {
+      "q2": "s2"
+    },
+    {
+      "q3": "s3"
+    }
+  ],
+  "MAT101": [{ "frågaA": "svarA" }, { "frågaB": "svarB" }]
+}

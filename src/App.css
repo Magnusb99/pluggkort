@@ -1,0 +1,61 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn:hover {
+  filter: drop-shadow(0 0 1em #ffffff15);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+.btn {
+  background-color: #e5e5e5;
+  font-weight: 600;
+  color: black;
+  transition: background-color 200ms linear, box-shadow 200ms linear,
+    transform 200ms linear, border-color 200ms linear;
+  border: 2px solid #242424;
+  margin: 10px;
+  box-shadow: inset 1px 1px 10px #00000075, inset -1px -1px 10px #00000075;
+  font-size: 18px;
+}
+.btn:hover {
+  box-shadow: none;
+  transform: scale(1.1);
+  border-color: #ffffff;
+}
+.cardWrap {
+}
+.card {
+  background-color: #e5e5e5;
+  color: black;
+  max-width: 80ch;
+  width: 600px;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: left;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+}
+.question {
+  font-weight: 600;
+}
+.cardBtn {
+}
