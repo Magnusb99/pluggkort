@@ -59,3 +59,6 @@
 }
 .cardBtn {
 }
+.btn:focus {
+  outline: none;
+}

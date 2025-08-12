@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Card({ courseName, questions }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,6 +16,22 @@ function Card({ courseName, questions }) {
     setCurrentIndex((prev) => (prev + 1) % questions.length);
     setShow(false);
   }
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === "Enter") {
+        nextQuestion();
+      } else if (event.key === " " || event.code === "Space") {
+        event.preventDefault();
+        setShow((prev) => !prev);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [questions.length]);
 
   return (
     <div className="cardWrap">
