@@ -95,3 +95,6 @@
 .fade.next {
   transform: translateX(10px);
 }
+.fade.prev {
+  transform: translateX(-10px);
+}

@@ -5,6 +5,7 @@ function Card({ courseName, questions }) {
   const [show, setShow] = useState(false);
   const [rotateY, setRotateY] = useState(false);
   const [next, setNext] = useState(false);
+  const [prev, setPrev] = useState(false);
 
   const currentQuestion = questions[currentIndex];
   const key = Object.keys(currentQuestion)[0];
@@ -24,6 +25,14 @@ function Card({ courseName, questions }) {
       setCurrentIndex((prev) => (prev + 1) % questions.length);
       setShow(false);
       setNext(false);
+    }, 300);
+  }
+  function prevQuestion() {
+    setPrev(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1) % questions.length);
+      setShow(false);
+      setPrev(false);
     }, 300);
   }
   useEffect(() => {
@@ -48,7 +57,9 @@ function Card({ courseName, questions }) {
       <h2>{courseName}</h2>
 
       <div
-        className={`card fade ${rotateY ? "out" : ""} ${next ? "next" : ""}`}
+        className={`card fade ${rotateY ? "out" : ""} ${next ? "next" : ""} ${
+          prev ? "prev" : ""
+        }`}
         onClick={showAnswer}
       >
         {show ? (
@@ -67,7 +78,9 @@ function Card({ courseName, questions }) {
           </p>
         )}
       </div>
-
+      <button className="btn cardBtn" onClick={prevQuestion}>
+        Nästa fråga
+      </button>
       <button className="btn cardBtn" onClick={nextQuestion}>
         Nästa fråga
       </button>
