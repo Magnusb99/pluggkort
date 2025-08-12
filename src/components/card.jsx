@@ -30,7 +30,9 @@ function Card({ courseName, questions }) {
   function prevQuestion() {
     setPrev(true);
     setTimeout(() => {
-      setCurrentIndex((prev) => (prev - 1) % questions.length);
+      setCurrentIndex(
+        (prev) => (prev - 1 + questions.length) % questions.length
+      );
       setShow(false);
       setPrev(false);
     }, 300);
