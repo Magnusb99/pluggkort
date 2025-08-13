@@ -20,14 +20,7 @@
     animation: logo-spin infinite 20s linear;
   }
 }
-@media (prefers-color-scheme: light) {
-  .card {
-    background-color: white;
-  }
-  .btn {
-    background-color: white;
-  }
-}
+
 .main {
   display: flex;
   width: 100%;
@@ -44,7 +37,7 @@
   width: 100%;
 }
 .NAVBAR h1 {
-  color: #e5e5e5;
+  color: #5e5e5e;
   text-shadow: 5px 3px 0px #0a7a00;
   font-size: 48px;
   margin: 0;
@@ -200,5 +193,13 @@ nav a {
   }
   .cardWrap {
     padding: 0px 20px;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .card {
+    background-color: white;
+  }
+  .btn {
+    background-color: white;
   }
 }
