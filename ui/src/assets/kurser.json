@@ -35,6 +35,16 @@
     },
     {
       "Ett system har följande felfrekvenser:\n- Månad 1: 15 fel - Månad 2: 12 fel - Månad 3: 8 fel - Månad 4: 6 fel\nNär anser du att systemet är redo för produktionssättning, motivera utifrån\nkursmaterial?": "Kursmaterialets principer:\n\nSystemet anses redo för produktion när kvaliteten uppfyller kravspecifikationen och MTTF / felnivåer ligger inom acceptabel nivå.\n\nEtt system med fortlöpande minskande feltrend (som här: 15 → 6) är lovande.\n\nBedömning:\n\nOm MTTF är tillräckligt högt för att motsvara driftkraven (t.ex. systemet kan gå flera dagar utan fel) och alla kritiska fel är fixade → redo.\n\nOm vissa kritiska fel fortfarande finns → vänta tills de är åtgärdade.\n\nMotivering: MTTF har förbättrats över tiden, men systemet bör testas ytterligare för kritiska scenarier innan produktionssättning."
+    },
+
+    {
+      "Beskriv Continuous Integration (CI)": "Kontinuerlig integrering av egen kod med en gemensam kodbas\nGenom att pusha kod ofta kan man snabbare se var i koden ett potentiellt fel finns\n\n"
+    },
+    {
+      "Beskriv Daily Scrum": "Korta dagliga möten där man går igenom\nVad man har gjort sen igår,\nvad man ska göra idag &\nvilka potentiella hinder som finns\n\nDaily scrum ökar transparens och kommunikation, ger snabb identifiering av problem/hinder.\nKan bli ineffektiva möten"
+    },
+    {
+      "Beskriv Sprint Retrospective": "Hålls i slutet av varje sprint\nVad fungerade bra?\n\nVad kan förbättras?\n\nHur genomför vi förbättringarna nästa sprint?\n\nFördelar:\nDriver kontinuerlig processförbättring.\n\nSkapar en kultur av öppenhet och lärande.\n\nBygger teamets samarbetsförmåga och förtroende.\n\nNackdelar:\nRisk för att samma problem återkommer om åtgärder inte följs upp.\n\nKan bli meningslös om deltagarna inte vågar vara ärliga.\n\nKräver tid och fokus även när projektet är pressat."
     }
   ]
 }

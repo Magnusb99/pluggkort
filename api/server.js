@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "https://ezplugg.netlify.app" }));
 const filePath = path.join(process.cwd(), "../ui/src/assets/kurser.json");
 
 app.post("/api/add-question", (req, res) => {

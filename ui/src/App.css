@@ -50,13 +50,14 @@ nav a {
   font-weight: 600;
   padding: 0.6em 1.2em;
   color: black;
-  transition: background-color 200ms linear, box-shadow 200ms linear,
-    transform 200ms linear, border-color 200ms linear;
+
   border: 2px solid #5e5e5e;
   margin: 10px;
 
   font-size: 18px;
   box-shadow: 0px 0px 10px #00000048;
+  transition: background-color 200ms linear, box-shadow 200ms linear,
+    transform 200ms linear, border-color 200ms linear;
 }
 .btn:hover {
   box-shadow: none;
