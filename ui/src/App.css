@@ -20,6 +20,14 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+@media (prefers-color-scheme: light) {
+  .card {
+    background-color: white;
+  }
+  .btn {
+    background-color: white;
+  }
+}
 .main {
   display: flex;
   width: 100%;
