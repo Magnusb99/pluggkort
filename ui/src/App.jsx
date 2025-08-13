@@ -18,6 +18,7 @@ function App() {
           <Link className="btn" to="/">
             Hem
           </Link>
+
           <Link className="btn" to="/add">
             Lägg in frågor
           </Link>
