@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function Questionadder() {
+  const navigate = useNavigate();
   const [questions, setQuestions] = useState([{ question: "", answer: "" }]);
+  const [courseCode, setCourseCode] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -17,6 +20,7 @@ function Questionadder() {
       .then((res) => res.json())
       .then((data) => {
         console.log("Svar från server:", data);
+        navigate("/");
       })
       .catch((err) => console.error("Fel vid skick:", err));
   }
@@ -39,7 +43,7 @@ function Questionadder() {
           <h3>Kurskod</h3>
           <input
             value={courseCode}
-            onChange={(e) => setCourseCode(e.target.value)}
+            onChange={(e) => setCourseCode(e.target.value.toUpperCase())}
           />
         </div>
 
@@ -72,7 +76,7 @@ function Questionadder() {
             </button>
           </div>
         ))}
-        <button className="btn" onClick={addQuestion}>
+        <button className="btn newQ" onClick={addQuestion}>
           Lägg till ny fråga
         </button>
         <button type="submit" className="btn">

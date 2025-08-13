@@ -129,6 +129,7 @@ nav a {
   flex-direction: row;
   flex-wrap: wrap;
   width: 60%;
+  padding: 2rem;
 }
 .addForm h3 {
   width: 40%;
@@ -137,14 +138,20 @@ nav a {
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: center;
+  align-items: left;
+  margin-left: 1rem;
 }
 .Course h3 {
   width: auto;
 }
 .Course input {
-  width: 30%;
+  width: 37%;
   line-height: 18px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: black;
+  font-family: inherit;
+  font-size: 18px;
 }
 .questionWrap {
   display: flex;
@@ -152,16 +159,21 @@ nav a {
   align-items: center;
   width: 100%;
 }
-.questionWrap .btn {
-  height: fit-content;
-}
+
 .input {
   display: flex;
   flex-direction: column;
   width: 40%;
+  height: fit-content;
 }
 .input textarea {
-  font-size: 18px;
-  height: 60px;
-  font-family: inherit;
+  min-height: 60px;
+  height: fit-content;
+
+  resize: vertical;
+  margin: 1rem;
+  padding: 2px;
+}
+.newQ {
+  margin-left: 1rem;
 }

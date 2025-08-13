@@ -19,7 +19,7 @@ function App() {
             Hem
           </Link>
           <Link className="btn" to="/add">
-            Lägg in fråga
+            Lägg in frågor
           </Link>
         </nav>
       </header>
