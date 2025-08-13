@@ -1,8 +1,4 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -24,9 +20,35 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+.main {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.NAVBAR {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+}
+.NAVBAR h1 {
+  color: #e5e5e5;
+  text-shadow: 5px 3px 0px #0a7a00;
+  font-size: 48px;
+  margin: 0;
+}
+nav a {
+  text-decoration: none;
+}
 .btn {
+  border-radius: 8px;
   background-color: #e5e5e5;
   font-weight: 600;
+  padding: 0.6em 1.2em;
   color: black;
   transition: background-color 200ms linear, box-shadow 200ms linear,
     transform 200ms linear, border-color 200ms linear;
@@ -97,4 +119,49 @@
 }
 .fade.prev {
   transform: translateX(-10px);
+}
+.arrowWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.addForm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+}
+.addForm h3 {
+  width: 40%;
+}
+.Course {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.Course h3 {
+  width: auto;
+}
+.Course input {
+  width: 30%;
+  line-height: 18px;
+}
+.questionWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+.questionWrap .btn {
+  height: fit-content;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.input textarea {
+  font-size: 18px;
+  height: 60px;
+  font-family: inherit;
 }
