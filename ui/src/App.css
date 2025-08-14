@@ -201,8 +201,10 @@ nav a {
   }
   .btn {
     background-color: white;
+    border-color: #ffffff;
   }
   .NAVBAR h1 {
     color: #e5e5e5;
   }
+  
 }
