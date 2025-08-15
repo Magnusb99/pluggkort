@@ -13,7 +13,7 @@ const client = new MongoClient(uri);
 async function main() {
   try {
     await client.connect();
-    const db = client.db("ezplugg");
+    const db = client.db("ezpluggCluster");
 
     app.get("/kursKoder", async (req, res) => {
       const collections = await db.listCollections().toArray();
@@ -22,7 +22,7 @@ async function main() {
       res.json(collectionNames);
     });
 
-    app.get("/api/fragor/:kurskod", async (req, res) => {
+    app.post("/:kurskod", async (req, res) => {
       const kurskod = req.params.kurskod;
       const fragor = await db.collection(kurskod).find().toArray();
       res.json(fragor);

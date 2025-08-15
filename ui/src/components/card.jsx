@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 
-function Card({ courseName, questions }) {
+function Card({ courseName }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [show, setShow] = useState(false);
   const [rotateY, setRotateY] = useState(false);
   const [next, setNext] = useState(false);
   const [prev, setPrev] = useState(false);
-
-  const currentQuestion = questions[currentIndex];
-  const key = Object.keys(currentQuestion)[0];
-  const value = currentQuestion[key];
+  const [questions, setQuestions] = useState([]);
 
   function showAnswer() {
     setRotateY(true); // start fade out
@@ -52,8 +49,27 @@ function Card({ courseName, questions }) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [questions.length]);
+  }, []);
+  useEffect(() => {
+    if (!courseName) return; // säkerställ att courseName finns
 
+    async function fetchQuestions() {
+      try {
+        console.log(courseName);
+        const response = await fetch(`http://localhost:3001/${courseName}`, {
+          method: "POST",
+        });
+        if (!response.ok) throw new Error("Nätverksfel: " + response.status);
+        const data = await response.json();
+        setQuestions(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Fel vid hämtning av frågor:", error);
+      }
+    }
+
+    fetchQuestions();
+  }, [courseName]); // kör om courseName ändras
   return (
     <div className="cardWrap">
       <h2>{courseName}</h2>
@@ -69,14 +85,14 @@ function Card({ courseName, questions }) {
             Svar:
             <br />
             <br />
-            {value}
+            {questions[currentIndex].svar}
           </p>
         ) : (
           <p className="question">
             Fråga:
             <br />
             <br />
-            {key}
+            {questions[currentIndex].fraga}
           </p>
         )}
       </div>

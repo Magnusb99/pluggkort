@@ -13,11 +13,20 @@ function App() {
   useEffect(() => {
     async function fetchKurser() {
       try {
-        const response = await fetch(`http://localhost:3001/kursKoder`);
+        const response = await fetch("http://localhost:3001/kursKoder");
+        if (!response.ok) {
+          throw new Error("Nätverksfel: " + response.status);
+        }
         const data = await response.json();
         setkursKoder(data);
-      } catch (error) {}
+        if (valdKurs == "") {
+          setValdKurs(data[0]);
+        }
+      } catch (error) {
+        console.error("Fel vid hämtning av kurskoder:", error);
+      }
     }
+
     fetchKurser();
   }, []);
   return (
@@ -46,7 +55,9 @@ function App() {
                   selectedCourse={valdKurs}
                   onCourseChange={setValdKurs}
                 />
-                <Card courseName={valdKurs} questions={kursKoder[valdKurs]} />
+                {kursKoder.length > 0 && valdKurs != "" && (
+                  <Card courseName={valdKurs} />
+                )}
               </>
             }
           />
