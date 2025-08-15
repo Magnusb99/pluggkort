@@ -1,17 +1,32 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { MongoClient } = require("mongodb");
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5173" })); //  https://ezplugg.netlify.app
 app.use(express.json());
 
-const uri =
-  "mongodb+srv://mangedev:gRZj05mymadRaHyA@ezpluggcluster.5jqv9np.mongodb.net/?retryWrites=true&w=majority&appName=ezpluggCluster";
+const allowedOrigins = [
+  "https://ezplugg.netlify.app", // Din produktions-URL
+  "http://localhost:3000", // Din lokala utvecklings-URL
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // Tillåt förfrågningar från de angivna ursprungen
+      // Eller tillåt förfrågningar utan "origin" (t.ex. från Postman eller cURL)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
+
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
-let count1 = 0;
-let count2 = 0;
-let count3 = 0;
 
 async function main() {
   try {
@@ -22,8 +37,6 @@ async function main() {
       const collections = await db.listCollections().toArray();
       const collectionNames = collections.map((c) => c.name);
       res.json(collectionNames);
-      console.log(count1);
-      count1++;
     });
     app.post("/addQuestion", async (req, res) => {
       const { course, questions } = req.body;
@@ -38,8 +51,6 @@ async function main() {
       const fragor = await db.collection(kurskod).find().toArray();
 
       res.json(fragor);
-      console.log("Count 2", count2);
-      count2++;
     });
 
     app.listen(3001, () => console.log("Server kör på port 3001"));
