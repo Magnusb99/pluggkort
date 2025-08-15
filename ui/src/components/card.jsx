@@ -84,42 +84,32 @@ function Card({ courseName }) {
         {questions.length === 0 ? (
           <p>Laddar frågor...</p> // eller null
         ) : show ? (
-          <p className="answer">
-            Svar:
-            <br />
-            <br />
-            {questions[currentIndex].answer}
-          </p>
+          <p className="answer">{questions[currentIndex].answer}</p>
         ) : (
-          <p className="question">
-            Fråga:
-            <br />
-            <br />
-            {questions[currentIndex].question}
-          </p>
+          <p className="question">{questions[currentIndex].question}</p>
         )}
       </div>
       <div className="arrowWrap">
         <button className="btn cardBtn" onClick={prevQuestion}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height="48px"
+            height="24px"
             viewBox="0 -960 960 960"
-            width="48px"
+            width="24px"
             fill="#000000"
           >
-            <path d="m274-450 248 248-42 42-320-320 320-320 42 42-248 248h526v60H274Z" />
+            <path d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z" />
           </svg>
         </button>
         <button className="btn cardBtn" onClick={nextQuestion}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height="48px"
+            height="24px"
             viewBox="0 -960 960 960"
-            width="48px"
+            width="24px"
             fill="#000000"
           >
-            <path d="M686-450H160v-60h526L438-758l42-42 320 320-320 320-42-42 248-248Z" />
+            <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
           </svg>
         </button>
       </div>

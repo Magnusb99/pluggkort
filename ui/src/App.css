@@ -112,6 +112,10 @@ nav a {
 .answer {
 }
 .cardBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
 }
 .btn:focus {
   outline: none;
@@ -176,8 +180,13 @@ nav a {
 .questionWrap .input {
 }
 .removeQ {
-  background-color: #800101;
+  background-color: #b37272;
   color: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
 }
 .input {
   display: flex;
@@ -195,19 +204,26 @@ nav a {
   width: 45%;
   margin: 0;
   margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 50px;
+  justify-content: center;
+  background-color: #7db372;
+  color: white;
+  border-color: #7db372;
 }
 .submit {
-  background-color: #0d9b00;
-  color: white;
-  border-color: #0d9b00;
-
+  border-radius: 50px;
   width: 45%;
   margin: 0;
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
-.submit:hover {
-  background-color: #0ea100;
-}
+
 /* 
 Styling för desktop
 */
@@ -228,7 +244,7 @@ Styling för desktop
     gap: 50px;
   }
   .addForm {
-    width: 60%;
+    width: 70%;
     justify-content: left;
   }
   .Course {
@@ -237,6 +253,17 @@ Styling för desktop
   }
   .questionWrap {
     flex-direction: row;
+  }
+  .questionWrap .input {
+    width: 40%;
+  }
+  .submit,
+  .newQ {
+    width: fit-content;
+    margin: 0;
+  }
+  .newQ {
+    margin-right: 20px;
   }
 }
 
