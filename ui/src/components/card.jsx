@@ -55,9 +55,12 @@ function Card({ courseName }) {
 
     async function fetchQuestions() {
       try {
-        const response = await fetch(`http://localhost:3001/${courseName}`, {
-          method: "POST",
-        });
+        const response = await fetch(
+          `https://ezplugg.onrender.com/${courseName}`,
+          {
+            method: "POST",
+          }
+        );
         if (!response.ok) throw new Error("Nätverksfel: " + response.status);
         const data = await response.json();
         setQuestions(data);

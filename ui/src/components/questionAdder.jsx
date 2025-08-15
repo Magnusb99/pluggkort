@@ -11,7 +11,7 @@ function Questionadder() {
       questions: questions,
     };
     try {
-      const response = await fetch("http://localhost:3001/addQuestion", {
+      const response = await fetch("https://ezplugg.onrender.com/addQuestion", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

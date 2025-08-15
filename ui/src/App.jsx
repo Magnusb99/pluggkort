@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     async function fetchKurser() {
       try {
-        const response = await fetch("http://localhost:3001/kursKoder");
+        const response = await fetch("https://ezplugg.onrender.com/kursKoder");
         if (!response.ok) {
           throw new Error("Nätverksfel: " + response.status);
         }
