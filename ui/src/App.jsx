@@ -46,7 +46,7 @@ function App() {
                   selectedCourse={valdKurs}
                   onCourseChange={setValdKurs}
                 />
-                <Card courseName={valdKurs} questions={kurser[valdKurs]} />
+                <Card courseName={valdKurs} questions={kursKoder[valdKurs]} />
               </>
             }
           />
