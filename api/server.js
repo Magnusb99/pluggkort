@@ -1,40 +1,37 @@
 const express = require("express");
-const fs = require("fs");
-const path = require("path");
-const bodyParser = require("body-parser");
 const cors = require("cors");
+const { MongoClient } = require("mongodb");
+
 const app = express();
-app.use(bodyParser.json());
 app.use(cors({ origin: "https://ezplugg.netlify.app" }));
-const filePath = path.join(process.cwd(), "../ui/src/assets/kurser.json");
+app.use(express.json());
 
-app.post("/api/add-question", (req, res) => {
-  const { course, questions } = req.body;
+const uri =
+  "mongodb+srv://mangedev:gRZj05mymadRaHyA@ezpluggcluster.5jqv9np.mongodb.net/?retryWrites=true&w=majority&appName=ezpluggCluster";
+const client = new MongoClient(uri);
 
-  if (!course || !questions) {
-    return res.status(400).json({ error: "Kurskod och frågor krävs" });
+async function main() {
+  try {
+    await client.connect();
+    const db = client.db("faqApp");
+
+    app.get("/kursKoder", async (req, res) => {
+      const collections = await db.listCollections().toArray();
+      const collectionNames = collections.map((c) => c.name);
+      console.log(collectionNames);
+      res.json(collectionNames);
+    });
+
+    app.get("/api/fragor/:kurskod", async (req, res) => {
+      const kurskod = req.params.kurskod;
+      const fragor = await db.collection(kurskod).find().toArray();
+      res.json(fragor);
+    });
+
+    app.listen(3001, () => console.log("Server kör på port 3001"));
+  } catch (err) {
+    console.error("Fel vid anslutning till MongoDB:", err);
   }
+}
 
-  const courseKey = course;
-
-  let data = {};
-  if (fs.existsSync(filePath)) {
-    data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-  }
-
-  if (!data[courseKey]) {
-    data[courseKey] = [];
-  }
-
-  questions.forEach((q) => {
-    if (q.question && q.answer) {
-      data[courseKey].push({ [q.question]: q.answer });
-    }
-  });
-
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
-
-  res.json({ message: "Frågor sparade", course: courseKey });
-});
-
-app.listen(3000, () => console.log("Server körs på http://localhost:3000"));
+main();

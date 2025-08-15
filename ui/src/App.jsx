@@ -1,15 +1,25 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useState } from "react";
-import kurser from "./assets/kurser.json";
+import { useEffect, useState } from "react";
+
 import Card from "./components/card";
 import CourseChooser from "./components/courseChooser";
 import QuestionAdder from "./components/questionAdder";
 import "./App.css";
 
 function App() {
-  const kursKoder = Object.keys(kurser);
+  const [kursKoder, setkursKoder] = useState([]);
   const [valdKurs, setValdKurs] = useState(kursKoder[0]);
 
+  useEffect(() => {
+    async function fetchKurser() {
+      try {
+        const response = await fetch(`http://localhost:3001/kursKoder`);
+        const data = await response.json();
+        setkursKoder(data);
+      } catch (error) {}
+    }
+    fetchKurser();
+  }, []);
   return (
     <Router>
       <header className="NAVBAR">
