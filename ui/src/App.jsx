@@ -8,7 +8,7 @@ import "./App.css";
 
 function App() {
   const [kursKoder, setkursKoder] = useState([]);
-  const [valdKurs, setValdKurs] = useState(kursKoder[0]);
+  const [valdKurs, setValdKurs] = useState([]);
 
   useEffect(() => {
     async function fetchKurser() {

@@ -13,7 +13,7 @@ const client = new MongoClient(uri);
 async function main() {
   try {
     await client.connect();
-    const db = client.db("faqApp");
+    const db = client.db("ezplugg");
 
     app.get("/kursKoder", async (req, res) => {
       const collections = await db.listCollections().toArray();
