@@ -3,7 +3,7 @@ const cors = require("cors");
 const { MongoClient } = require("mongodb");
 
 const app = express();
-app.use(cors({ origin: "https://ezplugg.netlify.app" }));
+app.use(cors({ origin: "http://localhost:5173" })); //https://ezplugg.netlify.app
 app.use(express.json());
 
 const uri =

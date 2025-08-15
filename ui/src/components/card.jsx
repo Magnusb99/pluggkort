@@ -80,7 +80,9 @@ function Card({ courseName }) {
         }`}
         onClick={showAnswer}
       >
-        {show ? (
+        {questions.length === 0 ? (
+          <p>Laddar frågor...</p> // eller null
+        ) : show ? (
           <p className="answer">
             Svar:
             <br />
