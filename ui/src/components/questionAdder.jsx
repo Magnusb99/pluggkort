@@ -21,10 +21,7 @@ function Questionadder() {
       if (!response.ok) throw new Error("Nätverksfel: " + response.status);
       const data = await response.json();
 
-      if (data != "") {
-        console.log(data);
-      }
-      redirect("/");
+      navigate("/");
     } catch (error) {
       console.error("Fel vid hämtning av frågor:", error);
     }

@@ -8,7 +8,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "https://ezplugg.netlify.app", // Din produktions-URL
-  "http://localhost:3000", // Din lokala utvecklings-URL
+  "http://localhost:5173", // Din lokala utvecklings-URL
 ];
 
 app.use(
