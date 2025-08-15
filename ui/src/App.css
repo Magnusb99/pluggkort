@@ -43,7 +43,7 @@
   margin-bottom: 20px;
 }
 .NAVBAR h1 {
-  color: #000000;
+  color: #ffffff;
   text-shadow: 5px 3px 0px #d47942;
 
   margin: 0;
@@ -54,16 +54,16 @@ nav a {
 }
 .btn {
   border-radius: 8px;
-  background-color: #5e5e5e;
+  background-color: #e5e5e5;
   font-weight: 600;
   padding: 0.6em 1.2em;
-  color: white;
+  color: #000000;
   font-size: 14px;
   border: 1px solid transparent;
   margin: 10px;
 
   font-size: 18px;
-  box-shadow: 0px 0px 10px #00000028;
+  box-shadow: 0px 0px 10px #ffffff28;
   transition: background-color 200ms linear, box-shadow 200ms linear,
     transform 200ms linear, border-color 200ms linear;
 }
@@ -88,7 +88,7 @@ nav a {
   cursor: pointer;
   transition: transform 200ms linear;
   border: 1px solid white;
-  box-shadow: 0px 0px 10px #00000028;
+  box-shadow: 0px 0px 10px #ffffff28;
 }
 @keyframes pulse {
   0% {
@@ -177,6 +177,7 @@ nav a {
 }
 .removeQ {
   background-color: #800101;
+  color: white;
 }
 .input {
   display: flex;
@@ -196,9 +197,10 @@ nav a {
   margin-right: auto;
 }
 .submit {
-  background-color: #0a7a00;
+  background-color: #0d9b00;
   color: white;
-  border-color: #0a7a00;
+  border-color: #0d9b00;
+
   width: 45%;
   margin: 0;
   margin-left: auto;
@@ -242,33 +244,4 @@ Styling för desktop
 Styling för ljust tema
 */
 @media (prefers-color-scheme: light) {
-  .card {
-    background-color: white;
-  }
-  .btn {
-    background-color: white;
-    border-color: #ffffff;
-    color: black;
-  }
-  .NAVBAR h1 {
-    color: #e5e5e5;
-  }
-  .newQ {
-    width: 30%;
-  }
-  .submit {
-    background-color: #0d9b00;
-    color: white;
-    border-color: #0d9b00;
-    width: 30%;
-  }
-  .submit:hover {
-    background-color: #0ea100;
-  }
-  .removeQ {
-    font-size: 14px;
-    width: min-content;
-    background-color: #800101;
-    color: white;
-  }
 }
