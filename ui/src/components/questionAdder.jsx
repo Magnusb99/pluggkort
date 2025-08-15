@@ -1,29 +1,35 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { redirect, useNavigate } from "react-router-dom";
 function Questionadder() {
   const navigate = useNavigate();
   const [questions, setQuestions] = useState([{ question: "", answer: "" }]);
   const [courseCode, setCourseCode] = useState("");
-  function handleSubmit(e) {
-    e.preventDefault();
 
+  const handleSubmit = async (e) => {
     const payload = {
       course: courseCode,
       questions: questions,
     };
+    try {
+      const response = await fetch("http://localhost:3001/addQuestion", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) throw new Error("Nätverksfel: " + response.status);
+      const data = await response.json();
 
-    fetch("http://localhost:3000/api/add-question", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Svar från server:", data);
-        navigate("/");
-      })
-      .catch((err) => console.error("Fel vid skick:", err));
-  }
+      if (data != "") {
+        console.log(data);
+      }
+      redirect("/");
+    } catch (error) {
+      console.error("Fel vid hämtning av frågor:", error);
+    }
+  };
+
   function removeQuestion(index) {
     setQuestions((prev) => prev.filter((_, i) => i !== index));
   }
@@ -38,7 +44,7 @@ function Questionadder() {
   }
   return (
     <>
-      <form className="addForm" onSubmit={handleSubmit}>
+      <div className="addForm">
         <div className="Course">
           <h3>Kurskod</h3>
           <input
@@ -79,10 +85,10 @@ function Questionadder() {
         <button className="btn newQ" onClick={addQuestion}>
           Lägg till ny fråga
         </button>
-        <button type="submit" className="btn">
+        <button onClick={handleSubmit} className="btn">
           Klar
         </button>
-      </form>
+      </div>
     </>
   );
 }

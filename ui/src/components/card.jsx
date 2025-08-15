@@ -55,14 +55,12 @@ function Card({ courseName }) {
 
     async function fetchQuestions() {
       try {
-        console.log(courseName);
         const response = await fetch(`http://localhost:3001/${courseName}`, {
           method: "POST",
         });
         if (!response.ok) throw new Error("Nätverksfel: " + response.status);
         const data = await response.json();
         setQuestions(data);
-        console.log(data);
       } catch (error) {
         console.error("Fel vid hämtning av frågor:", error);
       }
@@ -87,14 +85,14 @@ function Card({ courseName }) {
             Svar:
             <br />
             <br />
-            {questions[currentIndex].svar}
+            {questions[currentIndex].answer}
           </p>
         ) : (
           <p className="question">
             Fråga:
             <br />
             <br />
-            {questions[currentIndex].fraga}
+            {questions[currentIndex].question}
           </p>
         )}
       </div>
