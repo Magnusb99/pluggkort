@@ -21,6 +21,9 @@
   }
 }
 
+.cardWrap {
+  padding: 0px 20px;
+}
 .main {
   display: flex;
   width: 100%;
@@ -30,33 +33,37 @@
 }
 .NAVBAR {
   display: flex;
-  flex-direction: row;
+
   align-items: center;
   justify-content: space-around;
 
   width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 .NAVBAR h1 {
-  color: #5e5e5e;
-  text-shadow: 5px 3px 0px #0a7a00;
-  font-size: 48px;
+  color: #000000;
+  text-shadow: 5px 3px 0px #d47942;
+
   margin: 0;
+  font-size: 36px;
 }
 nav a {
   text-decoration: none;
 }
 .btn {
   border-radius: 8px;
-  background-color: #e5e5e5;
+  background-color: #5e5e5e;
   font-weight: 600;
   padding: 0.6em 1.2em;
-  color: black;
-
-  border: 2px solid #5e5e5e;
+  color: white;
+  font-size: 14px;
+  border: 1px solid transparent;
   margin: 10px;
 
   font-size: 18px;
-  box-shadow: 0px 0px 10px #00000048;
+  box-shadow: 0px 0px 10px #00000028;
   transition: background-color 200ms linear, box-shadow 200ms linear,
     transform 200ms linear, border-color 200ms linear;
 }
@@ -80,18 +87,18 @@ nav a {
   white-space: pre-wrap;
   cursor: pointer;
   transition: transform 200ms linear;
-  border: 2px solid #e5e5e5;
-  box-shadow: 0px 0px 10px #00000048;
+  border: 1px solid white;
+  box-shadow: 0px 0px 10px #00000028;
 }
 @keyframes pulse {
   0% {
-    border-color: #e5e5e5;
+    border-color: #000000;
   }
   50% {
-    border-color: #5da9ff;
+    border-color: #d47942;
   }
   100% {
-    border-color: #e5e5e5;
+    border-color: #000000;
   }
 }
 .card:hover {
@@ -124,48 +131,57 @@ nav a {
 }
 .arrowWrap {
   display: flex;
+  width: 100%;
   justify-content: space-between;
 }
+
 .addForm {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 60%;
-  padding: 2rem;
+  width: 100%;
+  padding: 20px;
 }
 .addForm h3 {
-  width: 40%;
+  margin: 0;
 }
 .Course {
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: left;
-  margin-left: 1rem;
+  align-items: center;
 }
 .Course h3 {
   width: auto;
 }
 .Course input {
-  width: 37%;
+  width: 50%;
   line-height: 18px;
   border-radius: 5px;
   background-color: #ffffff;
   color: black;
   font-family: inherit;
   font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 .questionWrap {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   width: 100%;
+  gap: 10px;
+  padding: 10px 0px;
 }
-
+.questionWrap .input {
+}
+.removeQ {
+  background-color: #800101;
+}
 .input {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 100%;
   height: fit-content;
 }
 .input textarea {
@@ -173,28 +189,58 @@ nav a {
   height: fit-content;
 
   resize: vertical;
-  margin: 1rem;
-  padding: 2px;
 }
 .newQ {
-  margin-left: 1rem;
+  width: 45%;
+  margin: 0;
+  margin-right: auto;
 }
-@media (max-width: 768px) {
+.submit {
+  background-color: #0a7a00;
+  color: white;
+  border-color: #0a7a00;
+  width: 45%;
+  margin: 0;
+  margin-left: auto;
+}
+.submit:hover {
+  background-color: #0ea100;
+}
+/* 
+Styling för desktop
+*/
+@media (min-width: 768px) {
   .NAVBAR {
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
     margin-bottom: 20px;
   }
   .NAVBAR h1 {
-    font-size: 36px;
+    font-size: 48px;
   }
   .btn {
-    font-size: 14px;
+    font-size: 18px;
   }
-  .cardWrap {
-    padding: 0px 20px;
+  .arrowWrap {
+    justify-content: center;
+    gap: 50px;
+  }
+  .addForm {
+    width: 60%;
+    justify-content: left;
+  }
+  .Course {
+    align-items: flex-start;
+    width: 40%;
+  }
+  .questionWrap {
+    flex-direction: row;
   }
 }
+
+/* 
+Styling för ljust tema
+*/
 @media (prefers-color-scheme: light) {
   .card {
     background-color: white;
@@ -202,9 +248,27 @@ nav a {
   .btn {
     background-color: white;
     border-color: #ffffff;
+    color: black;
   }
   .NAVBAR h1 {
     color: #e5e5e5;
   }
-  
+  .newQ {
+    width: 30%;
+  }
+  .submit {
+    background-color: #0d9b00;
+    color: white;
+    border-color: #0d9b00;
+    width: 30%;
+  }
+  .submit:hover {
+    background-color: #0ea100;
+  }
+  .removeQ {
+    font-size: 14px;
+    width: min-content;
+    background-color: #800101;
+    color: white;
+  }
 }

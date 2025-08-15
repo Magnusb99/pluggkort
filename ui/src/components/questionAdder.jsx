@@ -45,6 +45,7 @@ function Questionadder() {
         <div className="Course">
           <h3>Kurskod</h3>
           <input
+            className="input"
             value={courseCode}
             onChange={(e) => setCourseCode(e.target.value.toUpperCase())}
           />
@@ -69,7 +70,7 @@ function Questionadder() {
               />
             </div>
             <button
-              className="btn"
+              className="btn removeQ"
               onClick={(e) => {
                 e.preventDefault();
                 removeQuestion(index);
@@ -80,9 +81,9 @@ function Questionadder() {
           </div>
         ))}
         <button className="btn newQ" onClick={addQuestion}>
-          Lägg till ny fråga
+          Ny fråga
         </button>
-        <button onClick={handleSubmit} className="btn">
+        <button onClick={handleSubmit} className="btn submit">
           Klar
         </button>
       </div>

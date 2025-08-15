@@ -5,12 +5,15 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #5e5e5e;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -31,7 +34,7 @@ input,
 textarea {
   outline: none;
   border: 2px solid #ffffff;
-  box-shadow: 0px 0px 10px #00000048;
+  box-shadow: 0px 0px 10px #00000028;
 }
 input:focus,
 textarea:focus {
