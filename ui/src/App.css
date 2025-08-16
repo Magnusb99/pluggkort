@@ -157,7 +157,6 @@ nav a {
 }
 .Course h3 {
   width: auto;
-  color: #e5e5e5;
 }
 .Course input {
   width: 50%;
@@ -223,6 +222,32 @@ nav a {
   align-items: center;
   justify-content: center;
   gap: 5px;
+}
+.loadingWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+.loadingIcon {
+  animation: loading 5s infinite linear;
+  padding: 5px;
+  border-radius: 100%;
+  height: 40px;
+  width: 100%;
+}
+@keyframes loading {
+  0% {
+    transform: translateX(-100px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(100px) rotate(250deg);
+  }
+
+  100% {
+    transform: translateX(-100px) rotate(00deg);
+  }
 }
 
 /* 
