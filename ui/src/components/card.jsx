@@ -51,7 +51,7 @@ function Card({ courseName }) {
     };
   }, []);
   useEffect(() => {
-    if (!courseName) return; // säkerställ att courseName finns
+    if (!courseName) return;
 
     async function fetchQuestions() {
       try {
@@ -70,7 +70,7 @@ function Card({ courseName }) {
     }
 
     fetchQuestions();
-  }, [courseName]); // kör om courseName ändras
+  }, [courseName]);
   return (
     <div className="cardWrap">
       <h2>{courseName}</h2>
@@ -82,7 +82,7 @@ function Card({ courseName }) {
         onClick={showAnswer}
       >
         {questions.length === 0 ? (
-          <p>Laddar frågor...</p> // eller null
+          <p>Laddar frågor...</p>
         ) : show ? (
           <p className="answer">{questions[currentIndex].answer}</p>
         ) : (
