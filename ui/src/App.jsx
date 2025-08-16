@@ -62,7 +62,7 @@ function App() {
                     </svg>
                   </p> // eller null
                 )}
-                {kursKoder.length > 0 && valdKurs === "" && (
+                {kursKoder.length > 0 && (
                   <CourseChooser
                     courses={kursKoder}
                     selectedCourse={valdKurs}
