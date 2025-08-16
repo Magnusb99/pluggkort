@@ -50,7 +50,7 @@ function App() {
             path="/"
             element={
               <>
-                {kursKoder.length > 0 && (
+                {kursKoder.length === 0 && (
                   <p className="loadingWrap">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
