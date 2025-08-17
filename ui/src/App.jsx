@@ -41,12 +41,12 @@ function App() {
         <div className="mp3Player">
           {showMarkus && (
             <div className="imgWrap">
-              <img src="./src/assets/markus/krunegard.jpg" />
+              <img src="/src/assets/markus/krunegard.jpg" />
             </div>
           )}
           <audio controls>
             <source
-              src="./src/assets/markus/krunegard.mp3"
+              src="/src/assets/markus/krunegard.mp3"
               type="audio/mp3"
             ></source>
           </audio>
