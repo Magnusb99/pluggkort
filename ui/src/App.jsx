@@ -5,7 +5,8 @@ import Card from "./components/card";
 import CourseChooser from "./components/courseChooser";
 import QuestionAdder from "./components/questionAdder";
 import "./App.css";
-
+import bild from "./assets/krunegard.jpg";
+import musik from "./assets/krunegard.mp3";
 function App() {
   const [kursKoder, setkursKoder] = useState([]);
   const [valdKurs, setValdKurs] = useState([]);
@@ -41,11 +42,11 @@ function App() {
         <div className="mp3Player">
           {showMarkus && (
             <div className="imgWrap">
-              <img src="./src/assets/krunegard.jpg" />
+              <img src={bild} />
             </div>
           )}
           <audio controls>
-            <source src="./src/assets/krunegard.mp3" type="audio/mp3"></source>
+            <source src={musik} type="audio/mp3"></source>
           </audio>
           <button className="" onClick={ShowMarkus}>
             {showMarkus ? (
