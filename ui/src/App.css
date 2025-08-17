@@ -1,7 +1,28 @@
 #root {
   font-family: "Montserrat", sans-serif;
 }
-
+.mp3Player {
+  background-color: #3a3a3a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+}
+.imgWrap {
+  width: fit-content;
+}
+.imgWrap img {
+  width: 200px;
+  box-shadow: 0px 0px 10px #0000008c;
+  border-radius: 10px;
+}
+.mp3Player button {
+  background-color: white;
+  border-radius: 50px;
+  border: none;
+  aspect-ratio: 2/1;
+}
 .btn:hover {
   filter: drop-shadow(0 0 1em #ffffff09);
 }
@@ -232,10 +253,15 @@ nav a {
 }
 .loadingIcon {
   animation: loading 3s infinite linear;
+
   padding: 5px;
   border-radius: 100%;
   height: 40px;
   width: 100%;
+}
+.loadingText {
+  animation: loadingText 3s infinite ease-in-out;
+  margin: 1px;
 }
 @keyframes loading {
   0% {
@@ -248,6 +274,19 @@ nav a {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes loadingText {
+  0% {
+    color: #ffffff7e;
+  }
+
+  50% {
+    color: #ffffff;
+  }
+
+  100% {
+    color: #ffffff7e;
   }
 }
 
