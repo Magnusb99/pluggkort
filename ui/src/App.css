@@ -25,7 +25,7 @@
   aspect-ratio: 2/1;
 }
 .btn:hover {
-  filter: drop-shadow(0 0 1em #ffffff09);
+  /* filter: drop-shadow(0 0 1em #ffffff09);*/
 }
 
 .cardWrap {
@@ -77,7 +77,6 @@ nav a {
   border: 1px solid white;
   margin: 10px;
   font-size: 18px;
-  box-shadow: 0px 0px 10px #ffffff28;
 
   transition: background-color 200ms linear, box-shadow 200ms linear,
     transform 200ms linear, border-color 200ms linear;
@@ -91,6 +90,7 @@ nav a {
 }
 .btn:hover {
   box-shadow: none;
+  box-shadow: 3px 3px 0px #d47942;
   transform: scale(1.05);
   animation: pulse 3s infinite ease-in-out;
 }
@@ -113,13 +113,13 @@ nav a {
 }
 @keyframes pulse {
   0% {
-    border-color: #ffffff;
+    border-color: transparent;
   }
   50% {
     border-color: #d47942;
   }
   100% {
-    border-color: #ffffff;
+    border-color: transparent;
   }
 }
 .card:hover {
@@ -201,14 +201,14 @@ nav a {
 .questionWrap .input {
 }
 .removeQ {
-  background-color: #b37272;
+  background-color: #972828;
   color: white;
   border-radius: 50px;
   display: flex;
   align-items: center;
   gap: 5px;
   justify-content: center;
-  border: 1px solid #e29595;
+  border: 1px solid #944444;
 }
 .input {
   display: flex;
@@ -222,6 +222,7 @@ nav a {
 
   resize: vertical;
 }
+
 .newQ {
   width: 45%;
   margin: 0;
@@ -231,9 +232,10 @@ nav a {
   gap: 5px;
   border-radius: 50px;
   justify-content: center;
-  background-color: #7db372;
+  background-color: #4b9728;
   color: white;
-  border-color: #9be295;
+  border-color: #549444;
+  box-shadow: none;
 }
 .submit {
   border-radius: 50px;
