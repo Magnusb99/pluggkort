@@ -212,6 +212,7 @@ nav a {
 }
 .removeQ:hover{
   box-shadow: 1px 3px 0px #944444, -1px 3px 0px #944444;
+animation: pulsered 3s infinite ease-in-out;
 }
 .input {
   display: flex;
@@ -242,6 +243,7 @@ nav a {
 }
 .newQ:hover{
   box-shadow: 1px 3px 0px #549444, -1px 3px 0px #549444;
+animation: pulsegreen 3s infinite ease-in-out;
 }
 .submit {
   border-radius: 50px;
@@ -298,7 +300,17 @@ nav a {
     color: #ffffff7e;
   }
 }
+@keyframes pulsered{
+0%{border-color: #ffffff;}
+50%{border-color: #944444;}
+100%{border-color: #ffffff;}
 
+}
+@keyframes pulsegreen{
+0%{border-color: white;}
+50%{border-color: #549444;}
+100%{border-color: white;}
+}
 /* 
 Styling för desktop
 */
