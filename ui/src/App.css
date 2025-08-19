@@ -210,6 +210,9 @@ nav a {
   justify-content: center;
   border: 1px solid #944444;
 }
+.removeQ:hover{
+  box-shadow: 1px 3px 0px #944444, -1px 3px 0px #944444;
+}
 .input {
   display: flex;
   flex-direction: column;
@@ -236,6 +239,9 @@ nav a {
   color: white;
   border-color: #549444;
   box-shadow: none;
+}
+.newQ:hover{
+  box-shadow: 1px 3px 0px #549444, -1px 3px 0px #549444;
 }
 .submit {
   border-radius: 50px;
