@@ -301,15 +301,15 @@ animation: pulsegreen 3s infinite ease-in-out;
   }
 }
 @keyframes pulsered{
-0%{border-color: #ffffff;}
-50%{border-color: #944444;}
-100%{border-color: #ffffff;}
+0%{border-color: #944444;}
+50%{border-color: #d86262;}
+100%{border-color: #944444;}
 
 }
 @keyframes pulsegreen{
-0%{border-color: white;}
-50%{border-color: #549444;}
-100%{border-color: white;}
+0%{border-color: #549444;}
+50%{border-color: #78d861;}
+100%{border-color: #549444;}
 }
 /* 
 Styling för desktop
