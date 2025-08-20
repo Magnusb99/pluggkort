@@ -39,7 +39,7 @@ textarea {
 }
 input:focus,
 textarea:focus {
-  box-shadow: 4px 4px 0px #d47942;
+  box-shadow: 4px 4px 0px #d47942, 0px 4px 0px #d47942, 4px 0px 0px #d47942;
   outline:2px solid #d47942;
 }
 @keyframes pulse {
