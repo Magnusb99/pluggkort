@@ -32,14 +32,15 @@ textarea {
 }
 input,
 textarea {
-  outline: none;
+  
   border: 2px solid #ffffff;
   box-shadow: 0px 0px 10px #00000028;
-  transition: box-shadow 200ms linear;
+  transition: box-shadow 200ms linear, outline 200ms linear;
 }
 input:focus,
 textarea:focus {
   box-shadow: 4px 4px 0px #d47942;
+  outline:2px solid #d47942;
 }
 @keyframes pulse {
   0% {
