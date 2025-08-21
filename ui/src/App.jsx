@@ -5,7 +5,7 @@ import Card from "./components/card";
 import CourseChooser from "./components/courseChooser";
 import QuestionAdder from "./components/questionAdder";
 import "./App.css";
-import bild from "./assets/krunegard.jpg";
+
 import musik from "./assets/krunegard.mp3";
 function App() {
   const [kursKoder, setkursKoder] = useState([]);
@@ -31,47 +31,26 @@ function App() {
     fetchKurser();
   }, []);
 
-  function ShowMarkus() {
-    setMarkus(!showMarkus);
-  }
-
   return (
     <Router>
       <header className="NAVBAR">
-        <h1>Ezplugg</h1>
-        <div className="mp3Player">
-          {showMarkus && (
-            <div className="imgWrap">
-              <img src={bild} />
-            </div>
-          )}
-          <audio controls>
-            <source src={musik} type="audio/mp3"></source>
-          </audio>
-          <button className="" onClick={ShowMarkus}>
-            {showMarkus ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#000000"
-              >
-                <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#000000"
-              >
-                <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
-              </svg>
-            )}
-          </button>
+        <div className="titelWrap">
+          <a href="/">
+            <h1>Ezplugg</h1>
+          </a>
+
+          <p>
+            Powered by
+            <a href="https://wolkano.se" target="_blank">
+              <i>WOLKANO</i>
+            </a>
+          </p>
         </div>
+
+        <audio controls>
+          <source src={musik} type="audio/mp3"></source>
+        </audio>
+
         <nav>
           <Link className="btn linkBtn" to="/">
             <svg
