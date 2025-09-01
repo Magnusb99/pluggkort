@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import Card from "./components/card";
 import CourseChooser from "./components/courseChooser";
 import QuestionAdder from "./components/questionAdder";
+import Test from "./components/test";
 import "./App.css";
 
 import musik from "./assets/krunegard.mp3";
 function App() {
   const [kursKoder, setkursKoder] = useState([]);
   const [valdKurs, setValdKurs] = useState([]);
-  const [showMarkus, setMarkus] = useState(true);
+
   useEffect(() => {
     async function fetchKurser() {
       try {
@@ -72,7 +73,18 @@ function App() {
               width="24px"
               fill="#000000"
             >
-              <path d="M440-120v-320H120v-80h320v-320h80v320h320v80H520v320h-80Z" />
+              <path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+            </svg>
+          </Link>
+          <Link className="btn linkBtn" to="/test">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#000000"
+            >
+              <path d="M200-120q-51 0-72.5-45.5T138-250l222-270v-240h-40q-17 0-28.5-11.5T280-800q0-17 11.5-28.5T320-840h320q17 0 28.5 11.5T680-800q0 17-11.5 28.5T640-760h-40v240l222 270q32 39 10.5 84.5T760-120H200Zm80-120h400L544-400H416L280-240Zm-80 40h560L520-492v-268h-80v268L200-200Zm280-280Z" />
             </svg>
           </Link>
         </nav>
@@ -85,7 +97,7 @@ function App() {
             element={
               <>
                 {kursKoder.length === 0 && (
-                  <p className="loadingWrap">
+                  <div className="loadingWrap">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24px"
@@ -97,7 +109,7 @@ function App() {
                       <path d="M420-680v-120h120v120H420Zm0 520v-120h120v120H420Z" />
                     </svg>
                     <p className="loadingText">Laddar</p>
-                  </p>
+                  </div>
                 )}
                 {kursKoder.length > 0 && (
                   <CourseChooser
@@ -113,6 +125,7 @@ function App() {
             }
           />
           <Route path="/add" element={<QuestionAdder />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </main>
     </Router>

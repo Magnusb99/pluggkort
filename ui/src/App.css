@@ -15,7 +15,17 @@ Main
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+}
+.testInput {
+  width: 50%;
+  line-height: 18px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: black;
+  font-family: inherit;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 /* 
 NAVBAR
@@ -84,10 +94,27 @@ nav a {
 }
 .cardWrap {
 }
+.progressBar {
+  height: 15px;
+
+  background-color: #e5e5e5a2;
+  border-radius: 50px;
+  margin: 20px 0px;
+  overflow: hidden;
+}
+.bar {
+  height: 100%;
+  background-color: #d47942;
+  transition: width 300ms ease;
+}
+.cardWrap {
+  width: 100%;
+}
 .card {
   background-color: #e5e5e5;
   color: black;
   max-width: 60ch;
+
   padding: 20px;
   font-size: 18px;
   border-radius: 10px;
@@ -341,6 +368,12 @@ Styling för desktop
   .btn:active {
     transform: translateY(4px);
     box-shadow: none;
+  }
+  .cardWrap {
+    width: 60ch;
+  }
+  .card {
+    width: 100%;
   }
 }
 

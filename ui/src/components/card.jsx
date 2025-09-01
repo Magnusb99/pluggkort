@@ -7,7 +7,7 @@ function Card({ courseName }) {
   const [next, setNext] = useState(false);
   const [prev, setPrev] = useState(false);
   const [questions, setQuestions] = useState([]);
-
+  const width = (currentIndex / questions.length) * 100;
   function showAnswer() {
     setRotateY(true); // start fade out
     setTimeout(() => {
@@ -74,7 +74,9 @@ function Card({ courseName }) {
   return (
     <div className="cardWrap">
       <h2>{courseName}</h2>
-
+      <div className="progressBar">
+        <div className="bar" style={{ width: `${width}%` }}></div>
+      </div>
       <div
         className={`card fade ${rotateY ? "out" : ""} ${next ? "next" : ""} ${
           prev ? "prev" : ""
