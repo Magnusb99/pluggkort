@@ -261,13 +261,6 @@ nav a {
 .newQ:hover {
   background-color: #28972831;
 }
-.newQ:hover .svg {
-}
-.removeQ:hover .svg {
-}
-.svg {
-  transition: transform 200ms linear;
-}
 
 .submit {
   border-radius: 50px;
@@ -317,7 +310,7 @@ nav a {
   }
 
   50% {
-    color: #000000;
+    color: transparent;
   }
 
   100% {
@@ -352,6 +345,9 @@ Styling för desktop
   100% {
     transform: translate(-60px, 0); /* upp, tillbaka till start */
   }
+}
+.material-symbols-outlined {
+  transition: color 400ms ease-in-out;
 }
 @media (min-width: 768px) {
   .NAVBAR {
@@ -409,6 +405,15 @@ Styling för desktop
   }
   .insideWrap:hover {
   }
+  .btn:hover .material-symbols-outlined {
+    color: #fc9e4f;
+  }
+  .newQ:hover .material-symbols-outlined {
+    color: #03a703;
+  }
+  .removeQ:hover .material-symbols-outlined {
+    color: red;
+  }
 }
 
 /* 
@@ -417,12 +422,19 @@ Styling för ljust tema
 @media (prefers-color-scheme: dark) {
   :root {
     background-color: #5e5e5e;
+  }
+  #root {
     color: white;
+  }
+  .ruta {
+    background: #5e5e5e;
+    box-shadow: 5px 5px 16px #494949, -5px -5px 16px #737373;
   }
   .btn {
     background: #5e5e5e;
     box-shadow: 5px 5px 16px #494949, -5px -5px 16px #737373;
   }
+
   .progressBar {
     background: #f8f8ff;
     box-shadow: 5px 5px 16px #494949, -5px -5px 16px #737373;
@@ -430,5 +442,14 @@ Styling för ljust tema
   .NAVBAR h1 {
     color: #5e5e5e;
     text-shadow: 5px 3px 0px #fc9e4f, -1px -1px 0px white;
+  }
+  .material-symbols-outlined {
+    color: #f8f8ffb9;
+  }
+  .btn {
+    color: #f8f8ffb9;
+  }
+  .card {
+    box-shadow: 5px 5px 16px #494949, -5px -5px 16px #737373;
   }
 }

@@ -49,38 +49,14 @@ function App() {
 
         <nav>
           <Link className="btn linkBtn" to="/">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#000000"
-            >
-              <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
-            </svg>
+            <span class="material-symbols-outlined">home</span>
           </Link>
 
           <Link className="btn linkBtn" to="/add">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#000000"
-            >
-              <path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
-            </svg>
+            <span class="material-symbols-outlined">upload</span>
           </Link>
           <Link className="btn linkBtn" to="/test">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#000000"
-            >
-              <path d="M200-120q-51 0-72.5-45.5T138-250l222-270v-240h-40q-17 0-28.5-11.5T280-800q0-17 11.5-28.5T320-840h320q17 0 28.5 11.5T680-800q0 17-11.5 28.5T640-760h-40v240l222 270q32 39 10.5 84.5T760-120H200Zm80-120h400L544-400H416L280-240Zm-80 40h560L520-492v-268h-80v268L200-200Zm280-280Z" />
-            </svg>
+            <span class="material-symbols-outlined">genetics</span>
           </Link>
         </nav>
       </header>
@@ -94,7 +70,6 @@ function App() {
                 {kursKoder.length === 0 && (
                   <div className="loadingWrap">
                     <div className="ruta"></div>
-                    <p className="loadingText">Laddar</p>
                   </div>
                 )}
                 {kursKoder.length > 0 && (
@@ -103,7 +78,7 @@ function App() {
                     selectedCourse={valdKurs}
                     onCourseChange={setValdKurs}
                   />
-                )}{" "}
+                )}
                 {kursKoder.length > 0 && valdKurs !== "" && (
                   <Card courseName={valdKurs} />
                 )}
