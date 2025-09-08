@@ -5,6 +5,7 @@ import Card from "./components/card";
 import CourseChooser from "./components/courseChooser";
 import QuestionAdder from "./components/questionAdder";
 import Test from "./components/test";
+import About from "./components/about";
 import "./App.css";
 
 function App() {
@@ -55,8 +56,8 @@ function App() {
           <Link className="btn linkBtn" to="/add">
             <span class="material-symbols-outlined">upload</span>
           </Link>
-          <Link className="btn linkBtn" to="/test">
-            <span class="material-symbols-outlined">genetics</span>
+          <Link className="btn linkBtn" to="/about">
+            <span class="material-symbols-outlined">question_mark</span>
           </Link>
         </nav>
       </header>
@@ -87,6 +88,7 @@ function App() {
           />
           <Route path="/add" element={<QuestionAdder />} />
           <Route path="/test" element={<Test />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </main>
     </Router>
