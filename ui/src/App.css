@@ -82,7 +82,7 @@ nav a {
   margin: 10px;
   font-size: 18px;
 
-  background: #f8f8ff;
+  background-color: #f8f8ff;
   box-shadow: 5px 5px 7px #e2e2e8, -5px -5px 7px #ffffff;
   transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
 }
@@ -228,7 +228,7 @@ nav a {
   align-items: center;
   gap: 5px;
   justify-content: center;
-  transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out, transform 300ms ease-in-out;
 }
 .removeQ:hover {
   background-color: #97282831;
@@ -256,7 +256,7 @@ nav a {
   gap: 5px;
   border-radius: 50px;
   justify-content: center;
-  transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out, transform 300ms ease-in-out;
 }
 .newQ:hover {
   background-color: #28972831;
@@ -392,6 +392,7 @@ Styling för desktop
     margin-right: 20px;
   }
   .btn:hover {
+    transform: translateY(2px);
   }
   .btn:active {
     transform: translateY(4px);
