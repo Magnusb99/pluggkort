@@ -414,5 +414,21 @@ Styling för desktop
 /* 
 Styling för ljust tema
 */
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: #5e5e5e;
+    color: white;
+  }
+  .btn {
+    background: #5e5e5e;
+    box-shadow: 5px 5px 16px #494949, -5px -5px 16px #737373;
+  }
+  .progressBar {
+    background: #f8f8ff;
+    box-shadow: 5px 5px 16px #494949, -5px -5px 16px #737373;
+  }
+  .NAVBAR h1 {
+    color: #5e5e5e;
+    text-shadow: 5px 3px 0px #fc9e4f, -1px -1px 0px white;
+  }
 }
