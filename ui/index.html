@@ -15,7 +15,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"><script>
+    <script type="module" src="/src/main.jsx">
 (function() {
   const sessionId = localStorage.getItem("crm_session_id") || crypto.randomUUID();
   localStorage.setItem("crm_session_id", sessionId);
@@ -45,7 +45,7 @@
     }
   });
 })();
-</script>
+
 </script>
   </body>
 </html>
